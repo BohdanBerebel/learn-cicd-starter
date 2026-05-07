@@ -37,8 +37,8 @@ jobs:
       - name: Formatting
         run: test -z $(go fmt ./...)
 
-      - name: Install golint
-        run: go install golang.org/x/lint/golint@latest
+      - name: Install staticcheck
+        run: go install honnef.co/go/tools/cmd/staticcheck@latest
 
       - name: Calling linter
-        run: golint ./internal/auth/auth.go
+        run: staticcheck ./internal/auth/auth.go
