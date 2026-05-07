@@ -41,4 +41,4 @@ jobs:
         run: go install golang.org/x/lint/golint@latest
 
       - name: Calling linter
-        run: golint
+        run: golint ./internal/auth/auth.go
